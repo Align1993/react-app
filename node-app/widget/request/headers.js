@@ -2,6 +2,7 @@ var headerConfig = {
    debug: 0,
    key: 'liujun',
    ver : '1.0',
+   version: 0,
    ctype :1,
    md5 : require('../md5/md5')
 }
@@ -10,6 +11,8 @@ function headers(cookie) {
     var cookies = {},
         parts;
     if(cookie) {
+        console.log(cookie);
+        
         cookie.split(';').forEach(element => {
             parts = element.split('=');
             cookies[parts[0].trim()] = (parts[1] || '').trim();
@@ -22,7 +25,7 @@ function headers(cookie) {
         sign: headerConfig.sign,
         time: time,
         ver: headerConfig.ver,
-        version: version,
+        version: headerConfig.version,
         ctype: headerConfig.ctype,
         key: headerConfig.key,
         city: cookies.city || '',

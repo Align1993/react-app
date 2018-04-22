@@ -1,6 +1,9 @@
 var express = require('express'),
     app = express();
-    
+var template = require('express-art-template');
+   
+    app.engine('.html', template);
+    app.set('view engine', 'html')
     app.set('views', __dirname + '/views');
     app.set('views options', {
         debug: process.env.NODE_ENV !== 'production'

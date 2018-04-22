@@ -4,7 +4,7 @@ function getRequest(url, headers, cb) {
     request({
         url: url,
         formData: '',
-        headers: require('./headers')(headers.cookies || {})
+        headers: require('./headers')(headers.cookie)
     }, function (err, res, data) {
         if(!err && res.statusCode === 200) {
             var json = {};
