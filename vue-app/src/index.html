@@ -1,0 +1,39 @@
+<style>
+    .static{
+      color: pink
+    }
+    .active{
+      color: green
+    }
+    .error{
+      color: red
+    }
+  </style>
+  <script src="https://unpkg.com/vue"></script>
+  ​
+  <div id="app">
+    <p >{{ message }}</p>
+    <p>{{reverseMessage}}</p>
+  <span :title="title">title</span>
+  <h1 v-if="seen">you can see </h1>
+  <ul>
+    <li v-for="item in list">
+      {{item.name}} &nbsp; {{item.sex}}
+    </li>
+   <li-item></li-item>
+  </ul>
+  <p>{{rawHtml}}</p>
+  <span v-html='rawHtml'></span>
+  <button @click="count += 1">{{count}}</button>
+  <p>点击了{{count}}次</p>
+  ​
+   <button v-on:click="say">Say what</button>
+   <h1 class="static" v-bind:class="{active: isActive, error: hasError}">class</h1>
+   <p :class="classObject">classObject</p>
+   <p :class="[{active: isActive}, pink]">classArray</p>
+   
+   <h3 :style="{fontSize: fontSize}">34px</h3>
+    <h3 :style="styleObject">yellow 18px</h3>
+     <h3 :style="[styles]">34px</h3>
+  </div>
+  ​
