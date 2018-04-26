@@ -1,0 +1,44 @@
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+  <p v-if='ok'>ok</p>
+  <p v-else-if="ok == 'default'"></p>
+  <p v-else>no</p>
+  <template v-if='ok'>
+    <h1>h1</h1>
+    <h2>h2</h2>
+  </template>
+  
+  <template v-if='loginType == "email"'>
+      <label for="">email</label>
+      <input type="text" placeholder="email">
+  </template>
+  <template v-else>
+    <label for="">username</label>
+    <input type="text" placeholder='username' key='username'>
+  </template>
+  <button @click='changeLoginType'>changeLoginType</button>
+  <p v-show="ok"> you can see</p>
+  <ul>
+    <li v-for="(item, index) of list">
+        {{index}}. {{item.name}}: {{item.sex}}
+    </li>
+  </ul>
+  <ol>
+    <li v-for="(value, key, index) in obj">
+       {{index}}. {{key}} : {{value}}
+    </li>
+    <li v-for="(value, key, index) in obj1">
+       {{index}}. {{key}} : {{value}}
+    </li>
+    <li v-for="n in evenNumbers"> {{n}}</li>
+    <li v-for='n in 10' v-if='n%2==0'>
+        {{n}}
+    </li>
+  </ol>
+  <click-counter>haha</click-counter>
+  <click-counter>haha</click-counter>
+  <click-counter>haha</click-counter>
+  <component-a></component-a>
+  <component-b :title="title"></component-b>
+</div>
